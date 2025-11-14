@@ -1,0 +1,94 @@
+### Java ###
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+hs_err_pid*
+replay_pid*
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+
+### Spring Boot ###
+# Archivos generados por Spring Boot DevTools
+.spring-boot-devtools.properties
+devtools.properties
+
+### GraalVM Native Image ###
+*.native-image.properties
+native-image/
+*.exe
+*.dll
+*.so
+
+### Gradle (por si hay wrapper en backend) ###
+.gradle/
+build/
+
+### IDEs ###
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+### Sistema Operativo ###
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+### Logs ###
+logs/
+*.log
+*.out
+*.err
+
+### Configuración sensible ###
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+application-test.properties
+application-test.yml
+
+### Credenciales accidentalmente generadas ###
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+### Docker ###
+# exclude build artifacts
+docker-build/
+
+### Node (por si tu backend tiene frontend ligero) ###
+node_modules/
+npm-debug.log
+yarn-error.log
+
