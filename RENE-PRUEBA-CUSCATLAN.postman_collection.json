@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "38de8376-1a92-4493-9498-07d253fb00e3",
+		"name": "RENE-PRUEBA-CUSCATLAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8414168",
+		"_collection_link": "https://gold-meteor-827539.postman.co/workspace/My-Workspace~e2b1f89d-8e48-4250-8046-b6489c0582ca/collection/8414168-38de8376-1a92-4493-9498-07d253fb00e3?action=share&creator=8414168&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "AUTENTICACION",
+			"item": [
+				{
+					"name": "TOKEN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"jsonData = JSON.parse(responseBody)\r",
+									"value = jsonData.token\r",
+									"pm.environment.set(\"TOKEN\", value);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"prueba\",\n  \"password\": \"prueba123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/authentication/getToken",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"authentication",
+								"getToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RENEW TOKEN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"jsonData = JSON.parse(responseBody)\r",
+									"value = jsonData.token\r",
+									"pm.environment.set(\"TOKEN\", value);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"{{TOKEN}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/authentication/renewToken",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"authentication",
+								"renewToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDEN",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk2Njc2ODI4LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk2Njc2LCJleHAiOjE3NjMwOTk2NzZ9.pvUUlrksyTmgxwnCuke5ZdWQZQDT2lQ6ceqtmkpha2M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/orderRegistration",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"orderRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk3NTg4NDk5LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk3NTg4LCJleHAiOjE3NjMxMDA1ODh9.AFWEEDmGqBuVBTgEkCjdrV86KpKK3H1FNTFCvheRFAE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 9,\n    \"customer\": \"prueba 2\",\n    \"total\": 264.5,\n    \"orderStatus\": \"C\",\n    \"paymentMethod\": \"TC\",\n    \"paymentStatus\": \"EP\",\n    \"details\": [\n        {\n            \"id\": 7,\n            \"idProduct\": 3,\n            \"quantity\": 2,\n            \"price\": 109.95\n        },\n        {\n            \"id\": 8,\n            \"idProduct\": 4,\n            \"quantity\": 2,\n            \"price\": 22.3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/orderRegistration",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"orderRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idOrden\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8089/api-prueba-cuscatlan/orderRegistration/delete/8",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8089",
+							"path": [
+								"api-prueba-cuscatlan",
+								"orderRegistration",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk1NDA2OTk1LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk1NDA2LCJleHAiOjE3NjMwOTg0MDZ9.e3EmBIsRGq3kjQY1nMhqUIVlaXEQ7Jyy39Q2U24z_sQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/orderRegistration/getAllOrders",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"orderRegistration",
+								"getAllOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk1NDA2OTk1LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk1NDA2LCJleHAiOjE3NjMwOTg0MDZ9.e3EmBIsRGq3kjQY1nMhqUIVlaXEQ7Jyy39Q2U24z_sQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/orderRegistration/getAnOrder/5",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"orderRegistration",
+								"getAnOrder",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTOS",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/products/getAllProducts",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"products",
+								"getAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idOrden\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/products/getAProduct/2",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"products",
+								"getAProduct",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PAGOS",
+			"item": [
+				{
+					"name": "CREAR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk1NDA2OTk1LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk1NDA2LCJleHAiOjE3NjMwOTg0MDZ9.e3EmBIsRGq3kjQY1nMhqUIVlaXEQ7Jyy39Q2U24z_sQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idOrder\": 5,\r\n  \"names\": \"Alessa\",\r\n  \"surnames\": \"Valentina\",\r\n  \"email\": \"prueba@gmail.com\",\r\n  \"phone\": \"71512658\",\r\n  \"number_card\": \"4578\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/paymentOrder",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"paymentOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzYzMDk3NTg4NDk5LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzYzMDk3NTg4LCJleHAiOjE3NjMxMDA1ODh9.AFWEEDmGqBuVBTgEkCjdrV86KpKK3H1FNTFCvheRFAE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic U2hvcHBpbmdVc2VyOlRpNEVFalRiVDQzcDJua3Z3NzBHJCQzYWJYVT0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"idOrder\": 5,\n  \"names\": \"Alesssa\",\n  \"surnames\": \"Vale\",\n  \"email\": \"prueba@gmail.com\",\n  \"phone\": \"7171-0000\",\n  \"number_card\": \"4578\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{UrlLocal}}:8082/api-prueba-cuscatlan/paymentOrder",
+							"host": [
+								"{{UrlLocal}}"
+							],
+							"port": "8082",
+							"path": [
+								"api-prueba-cuscatlan",
+								"paymentOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
